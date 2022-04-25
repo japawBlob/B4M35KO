@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5f6af81-b943-4fa6-8005-d1bbd996f3db" name="Changes" comment="" />
+    <list default="true" id="d5f6af81-b943-4fa6-8005-d1bbd996f3db" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/hw3/cmake-build-debug/CMakeFiles/hw3.dir/main.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/cmake-build-debug/CMakeFiles/hw3.dir/main.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw3/cmake-build-debug/Testing/Temporary/LastTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/cmake-build-debug/Testing/Temporary/LastTest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw3/cmake-build-debug/hw3" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/cmake-build-debug/hw3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw3/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hw3/out.txt" beforeDir="false" afterPath="$PROJECT_DIR$/hw3/out.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,6 +38,7 @@
       <option name="presentableId" value="Default" />
       <updated>1649162248178</updated>
       <workItem from="1649162249359" duration="23000" />
+      <workItem from="1650807614713" duration="6000" />
     </task>
     <servers />
   </component>
