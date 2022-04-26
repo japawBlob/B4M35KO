@@ -7,6 +7,7 @@ import queue
 #  model.cbGetSolution(x[current_node][j])
 
 
+
 def my_callback(model, where):
     if where == g.GRB.Callback.MIPSOL:
         x = model.cbGetSolution(used_edges)
@@ -100,6 +101,11 @@ if __name__ == '__main__':
     print("NODES")
     print(nodes)
 
+    union_find = [-1 for i in range(number_of_nodes)]
+    for t in nodes:
+        if nodes[t] == 1:
+            union_find[t] = t
+
     m = g.Model()
     m.Params.lazyConstraints = 1
     used_nodes = m.addVars(number_of_nodes, vtype=g.GRB.BINARY)
@@ -109,10 +115,10 @@ if __name__ == '__main__':
     m.addConstr(g.quicksum(used_nodes[i] * nodes[i] for i in range(number_of_nodes)) == number_of_terminals)
 
     # all used nodes need to be connected
-    for i in range(number_of_nodes):
-        line = g.quicksum(used_nodes[i]*used_edges[i, j] for j in range(number_of_nodes))
-        column = g.quicksum(used_nodes[i]*used_edges[j, i] for j in range(number_of_nodes))
-        m.addConstr(line + column >= 1*nodes[i])
+    # for i in range(number_of_nodes):
+    #     line = g.quicksum(used_nodes[i]*used_edges[i, j] for j in range(number_of_nodes))
+    #     column = g.quicksum(used_nodes[i]*used_edges[j, i] for j in range(number_of_nodes))
+    #     m.addConstr(line + column >= 0)
 
     # minimize cost of spanning tree
     m.setObjective(g.quicksum(used_edges[i, j] * distance_matrix[i][j] for i in range(number_of_nodes) for j in range (number_of_nodes)), g.GRB.MINIMIZE)
@@ -125,6 +131,19 @@ if __name__ == '__main__':
         print(int(used_nodes[i].x), end=" ")
     print()
 
+    # used_matrix = [[0 for i in range(number_of_nodes)] for j in range(number_of_nodes)]
+    #
+    # sol = int(m.objVal)
+    # for i in range(number_of_nodes):
+    #     for j in range(number_of_nodes):
+    #         if int(used_edges[i, j].x) == 1 and int(used_edges[j, i].x) == 1:
+    #             used_matrix[i][j] = 1
+    #             sol -= 1
+    #         else:
+    #             used_matrix[i][j] = int(used_edges[i, j].x)
+
+
+
     for i in range(number_of_nodes):
         for j in range(number_of_nodes):
             print(used_edges[i, j].x, end=" ")
@@ -135,6 +154,12 @@ if __name__ == '__main__':
         for j in range (number_of_nodes):
             if ( int(used_edges[i ,j].x) == 1 ):
                 print(i, j)
+
+    # print(int(sol))
+    # for i in range(number_of_nodes):
+    #     for j in range(number_of_nodes):
+    #         if used_matrix[i][j] == 1:
+    #             print(i, j)
 
     #
     #
