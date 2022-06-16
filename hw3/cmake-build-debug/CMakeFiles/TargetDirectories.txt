@@ -1,3 +1,0 @@
-/mnt/c/Users/JakubJíra/Codes/B4M35KO/hw3/cmake-build-debug/CMakeFiles/edit_cache.dir
-/mnt/c/Users/JakubJíra/Codes/B4M35KO/hw3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/JakubJíra/Codes/B4M35KO/hw3/cmake-build-debug/CMakeFiles/hw3.dir
